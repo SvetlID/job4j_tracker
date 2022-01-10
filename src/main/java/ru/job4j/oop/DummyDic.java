@@ -10,7 +10,7 @@ public class DummyDic {
     public static void main(String[] args) {
         DummyDic happy = new DummyDic();
         String eng = happy.engToRus();
-        System.out.println("Веселый" + eng);
+        System.out.println("Веселый " + eng);
 
     }
 }
