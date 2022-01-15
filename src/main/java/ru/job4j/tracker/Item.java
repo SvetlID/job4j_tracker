@@ -11,11 +11,6 @@ public class Item {
     public Item() {
     }
 
-    public static void main(String[] args) {
-        Arrays.stream(args).forEach(System.out::println);
-        System.out.println("hello from static!");
-    }
-
     public Item(String name) {
         this.name = name;
     }
