@@ -1,7 +1,5 @@
 package ru.job4j.pojo;
 
-import java.util.List;
-
 public class ShopDrop {
     public static void main(String[] args) {
         Product[] products = new Product[3];
@@ -16,7 +14,7 @@ public class ShopDrop {
             if (product != null) {
                 System.out.println(product.getName());
             } else {
-                System.out.println("null ");
+                System.out.println("null");
             }
         }
     }
