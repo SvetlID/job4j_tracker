@@ -8,6 +8,7 @@ public class License {
     private String model;
     private String code;
     private Date created;
+    private Date created1;
 
     public String getOwner() {
         return owner;
