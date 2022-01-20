@@ -16,7 +16,7 @@ public class ShopDrop {
             if (product != null) {
                 System.out.println(product.getName());
             } else {
-                System.out.println("null");
+                System.out.println("null ");
             }
         }
     }
