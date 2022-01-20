@@ -45,6 +45,7 @@ public class Tracker {
             Item item = items[index];
             if (item.getId() == id) {
                 rsl = item;
+                break;
             }
         }
         return rsl;
