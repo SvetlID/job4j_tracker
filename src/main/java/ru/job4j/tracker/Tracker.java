@@ -53,5 +53,19 @@ public class Tracker {
         }
         return rsl;
     }
+
+    public boolean replace(int id, Item item) {
+        boolean result = true;
+        int index = indexOf(id);
+        if (index == -1) {
+            result = false;
+        } else {
+            item.setId(id);
+            items[index] = item;
+        }
+        return result;
+    }
 }
+
+
 
