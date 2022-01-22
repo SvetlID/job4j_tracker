@@ -27,15 +27,7 @@ public class Tracker {
     }
 
     public Item[] findAll() {
-        int size = 0;
-        Item[] itemsWithoutNull = new Item[items.length];
-        for (Item item : items) {
-            if (item != null) {
-                itemsWithoutNull[size] = item;
-                size++;
-            }
-        }
-        return Arrays.copyOf(itemsWithoutNull, size);
+        return Arrays.copyOf(items, size);
     }
 
     public Item findById(int id) {
@@ -77,7 +69,7 @@ public class Tracker {
         items[size - 1] = null;
         size--;
         System.arraycopy(items, start, items, index, length);
-        return true;
+        return result;
     }
 
 }
