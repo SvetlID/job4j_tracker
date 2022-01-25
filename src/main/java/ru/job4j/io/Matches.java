@@ -19,7 +19,7 @@ public class Matches {
                 count = count - select;
                 System.out.println("Осталось " + count + "спичек.");
             } else {
-                System.out.println("Значение не верно");
+                System.out.println("Значение не верно, введите новое");
             }
         }
         if (!turn) {
