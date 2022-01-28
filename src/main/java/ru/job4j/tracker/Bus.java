@@ -2,13 +2,11 @@ package ru.job4j.tracker;
 
 public class Bus implements Transport {
     @Override
-    public String drive() {
-        return null;
+    public void drive() {
     }
 
     @Override
-    public int passengers(int number) {
-        return 0;
+    public void passengers(int number) {
     }
 
     @Override
