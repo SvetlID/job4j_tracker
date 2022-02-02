@@ -113,8 +113,7 @@ public class TrackerTest {
         Item item = new Item("test");
         tracker.add(item);
         String[] answers = {
-                String.valueOf(item.getId()),
-                "test"
+                String.valueOf(item.getId())
         };
         StartUI.deleteItems(new StubInput(answers), tracker);
         assertNull(tracker.findById(item.getId()));
