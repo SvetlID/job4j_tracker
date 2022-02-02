@@ -6,6 +6,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.nullValue;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
 
 public class TrackerTest {
     @Test
@@ -90,5 +91,32 @@ public class TrackerTest {
         int id = bug.getId();
         tracker.delete(id);
         assertThat(tracker.findById(id), is(nullValue()));
+    }
+
+    @Test
+    public void whenEditItem() {
+        Tracker tracker = new Tracker();
+        Item item = new Item("new item");
+        tracker.add(item);
+        String[] answers = {
+                String.valueOf(item.getId()),
+                "edited item"
+        };
+        StartUI.editItem(new StubInput(answers), tracker);
+        Item edited = tracker.findById(item.getId());
+        assertThat(edited.getName(), is("edited item"));
+    }
+
+    @Test
+    public void whenDeleteItem() {
+        Tracker tracker = new Tracker();
+        Item item = new Item("test");
+        tracker.add(item);
+        String[] answers = {
+                String.valueOf(item.getId()),
+                "test"
+        };
+        StartUI.deleteItems(new StubInput(answers), tracker);
+        assertNull(tracker.findById(item.getId()));
     }
 }

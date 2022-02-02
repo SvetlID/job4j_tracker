@@ -22,7 +22,7 @@ public class StartUI {
         }
     }
 
-    public static void selectItems(Input input, Tracker tracker) {
+    public static void editItem(Input input, Tracker tracker) {
         System.out.println("=== Edit item ===");
         int id = input.askInt("Enter id: ");
         String name = input.askStr("Enter name: ");
@@ -78,7 +78,7 @@ public class StartUI {
             } else if (select == 1) {
                 StartUI.showItems(input, tracker);
             } else if (select == 2) {
-                StartUI.selectItems(input, tracker);
+                StartUI.editItem(input, tracker);
             } else if (select == 3) {
                 StartUI.deleteItems(input, tracker);
             } else if (select == 4) {
