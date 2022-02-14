@@ -36,7 +36,7 @@ public class StartUITest {
     }
 
     @Test
-    public void FindAllActionTestOutputSuccessfully() {
+    public void whenFindAllTestOutputSuccessfully() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
         Item one = tracker.add(new Item("test1"));
@@ -63,7 +63,7 @@ public class StartUITest {
     }
 
     @Test
-    public void FindByIdActionTestOutputSuccessfully() {
+    public void whenFindByIdTestOutputSuccessfully() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
         Item one = tracker.add(new Item("test1"));
@@ -90,7 +90,7 @@ public class StartUITest {
     }
 
     @Test
-    public void FindByNameActionTestOutputSuccessfully() {
+    public void whenFindByNameTestOutputSuccessfully() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
         Item one = tracker.add(new Item("test1"));
