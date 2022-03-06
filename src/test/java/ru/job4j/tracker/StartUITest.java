@@ -2,6 +2,8 @@ package ru.job4j.tracker;
 
 import org.junit.Test;
 
+import java.util.List;
+
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
@@ -20,7 +22,7 @@ public class StartUITest {
                 new EditItem(out),
                 new ExitProgram(out)
         };
-        new StartUI(out).init(in, tracker, actions);
+        new StartUI(out).init(in, tracker, List.of(actions));
         String ln = System.lineSeparator();
         assertThat(out.toString(), is(
                 "Menu." + ln
@@ -47,7 +49,7 @@ public class StartUITest {
                 new ShowItems(out),
                 new ExitProgram(out)
         };
-        new StartUI(out).init(in, tracker, actions);
+        new StartUI(out).init(in, tracker, List.of(actions));
         String ln = System.lineSeparator();
         assertThat(out.toString(), is(
                 "Menu." + ln
@@ -74,7 +76,7 @@ public class StartUITest {
                 new FindItem(out),
                 new ExitProgram(out)
         };
-        new StartUI(out).init(in, tracker, actions);
+        new StartUI(out).init(in, tracker, List.of(actions));
         String ln = System.lineSeparator();
         assertThat(out.toString(), is(
                 "Menu." + ln
@@ -101,7 +103,7 @@ public class StartUITest {
                 new FindByName(out),
                 new ExitProgram(out)
         };
-        new StartUI(out).init(in, tracker, actions);
+        new StartUI(out).init(in, tracker, List.of(actions));
         String ln = System.lineSeparator();
         assertThat(out.toString(), is(
                 "Menu." + ln
@@ -126,7 +128,7 @@ public class StartUITest {
         UserAction[] actions = {
                 new ExitProgram(out)
         };
-        new StartUI(out).init(in, tracker, actions);
+        new StartUI(out).init(in, tracker, List.of(actions));
         assertThat(out.toString(), is(
                 "Menu." + System.lineSeparator()
                         + "0.Exit program" + System.lineSeparator()
@@ -144,7 +146,7 @@ public class StartUITest {
         UserAction[] actions = {
                 new ExitProgram(out)
         };
-        new StartUI(out).init(in, tracker, actions);
+        new StartUI(out).init(in, tracker, List.of(actions));
         assertThat(out.toString(), is(
                 "Menu." + System.lineSeparator()
                         + "0.Exit program" + System.lineSeparator()
