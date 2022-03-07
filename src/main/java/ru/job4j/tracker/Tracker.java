@@ -14,17 +14,17 @@ public class Tracker {
     }
 
     public List<Item> findByName(String key) {
-        List<Item> itemsWithoutNull = new ArrayList<>(items.size());
+        List<Item> result = new ArrayList<>(items.size());
         for (Item item : items) {
             if (item.getName().contains(key)) {
-                itemsWithoutNull.add(item);
+                result.add(item);
             }
         }
-        return itemsWithoutNull;
+        return result;
     }
 
     public List<Item> findAll() {
-        return new ArrayList<>(items);
+        return List.copyOf(items);
     }
 
     public Item findById(int id) {
