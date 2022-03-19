@@ -11,7 +11,7 @@ import static org.junit.Assert.assertThat;
 public class ItemAscByNameTest {
 
     @Test
-    public void SortByNames() {
+    public void sortByNames() {
         List<Item> items = Arrays.asList(
                 new Item("Ivan"),
                 new Item("Petr"),
