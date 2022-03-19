@@ -5,6 +5,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 public class Item {
+
     private int id;
     private String name;
     private final LocalDateTime created = LocalDateTime.now();
@@ -66,4 +67,5 @@ public class Item {
                 + ", name='" + name + '\''
                 + ", created=" + created.format(FORMATTER) + '}';
     }
+
 }
