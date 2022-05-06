@@ -60,14 +60,11 @@ public class BankService {
      */
 
     public User findByPassport(String passport) {
-        User result = null;
-        for (User user : users.keySet()) {
-            if (passport.equals(user.getPassport())) {
-                result = user;
-                break;
-            }
-        }
-        return result;
+        return users.keySet()
+                .stream()
+                .filter(us -> us.getPassport().equals(passport))
+                .findFirst()
+                .orElse(null);
     }
 
     /**
@@ -81,17 +78,14 @@ public class BankService {
 
     public Account findByRequisite(String passport, String requisite) {
         User user = findByPassport(passport);
-        Account result = null;
         if (user != null) {
-            List<Account> list = users.get(user);
-            for (Account account : list) {
-                if (account.getRequisite().equals(requisite)) {
-                    result = account;
-                    break;
-                }
-            }
+            return users.get(user)
+                    .stream()
+                    .filter(us -> us.getRequisite().equals(requisite))
+                    .findFirst()
+                    .orElse(null);
         }
-        return result;
+        return null;
     }
 
     /**
@@ -107,7 +101,8 @@ public class BankService {
      * @return возвращает true при осуществлении перевода и false, если пользователь не найдет, либо на балансе
      * отправителя недостаточно средств для перевода.
      */
-    public boolean transferMoney(String srcPassport, String srcRequisite, String destPassport, String destRequisite, double amount) {
+    public boolean transferMoney(String srcPassport, String srcRequisite, String destPassport, String destRequisite,
+                                 double amount) {
         boolean rsl = false;
         Account srcAccount = findByRequisite(srcPassport, srcRequisite);
         Account destAccount = findByRequisite(destPassport, destRequisite);
