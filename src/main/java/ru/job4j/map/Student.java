@@ -39,7 +39,6 @@ public class Student {
         this.group = group;
     }
 
-    @SuppressWarnings("checkstyle:NeedBraces")
     @Override
     public boolean equals(Object o) {
         if (this == o) {
