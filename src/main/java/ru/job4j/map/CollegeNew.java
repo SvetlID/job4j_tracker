@@ -14,9 +14,9 @@ public class CollegeNew {
 
     public Optional<Student> findByAccount(String account) {
         Optional<Student> rsl = Optional.empty();
-        for (Student s : students.keySet()) {
-            if (account.equals(s.getAccount())) {
-                rsl = Optional.of(s);
+        for (Student st : students.keySet()) {
+            if (account.equals(st.getAccount())) {
+                rsl = Optional.of(st);
                 break;
             }
         }
