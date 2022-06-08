@@ -35,7 +35,7 @@ public class StudentLevelTest {
         List<Student> input = new ArrayList<>();
         input.add(null);
         input.add(new Student(28, "Pety"));
-        List<Student> expected = List.of(new Student(28,"Pety"));
+        List<Student> expected = List.of(new Student(28, "Pety"));
         assertThat(StudentLevel.levelOf(input, 10), is(expected));
     }
 }
