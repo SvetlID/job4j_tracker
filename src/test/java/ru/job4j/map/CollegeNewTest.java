@@ -85,7 +85,7 @@ public class CollegeNewTest {
     @Test
     public void whenSubjectIsOptionalNotEmpty() {
         Map<Student, Set<Subject>> students = Map.of(
-                new Student("Student1", "000003", "201-18-15"),
+                new Student("Student1", "000001", "201-18-15"),
                 Set.of(
                         new Subject("Math", 70),
                         new Subject("English", 85)
